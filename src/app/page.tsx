@@ -16,7 +16,7 @@ export default async function Home() {
       <div className="flex-col items-center space-y-2">
         <BeakerIcon className="mx-auto h-16 w-1h-16 text-blue-500" />
         <h1 className="text-3xl font-medium dark:text-white text-slate-800">
-          Grudget Frontend
+          Next.js 13 Starter Template
         </h1>
       </div>
 
