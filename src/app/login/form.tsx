@@ -20,7 +20,6 @@ export const LoginForm = () => {
     e.preventDefault()
     try {
       setLoading(true)
-      setFormValues({ email: "", password: "" })
 
       const res = await signIn("credentials", {
         redirect: false,
@@ -30,8 +29,8 @@ export const LoginForm = () => {
       })
 
       setLoading(false)
+      setFormValues({ email: "", password: "" })
 
-      console.log(res)
       if (!res?.error) {
         router.push(callbackUrl)
       } else {
