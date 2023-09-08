@@ -3,9 +3,9 @@ import { getServerSession } from "next-auth/next"
 import { User } from "next-auth"
 import { options } from "./api/auth/[...nextauth]/options"
 
-import ThemeSwitcher from "./components/themeSwitcher"
-import CounterReducer from "./components/counterReducer"
-import Logout from "./components/logout"
+import Counter from "./components/Counter"
+import ThemeSwitcher from "./components/ThemeSwitcher"
+import Logout from "./components/Logout"
 
 export default async function Home() {
   const session = await getServerSession(options)
@@ -20,12 +20,12 @@ export default async function Home() {
         </h1>
       </div>
 
-      <div className="bg-sky-100 p-4 rounded-md text-sky-700">
+      <div className="bg-sky-100 p-4 rounded-md text-sky-700 mt-4">
         <pre>{JSON.stringify(user, null, 2)}</pre>
       </div>
 
-      <CounterReducer />
       <div className="text-center">
+        <Counter />
         <ThemeSwitcher />
         <Logout />
       </div>

@@ -6,7 +6,8 @@
         "myverystrongpassword",
         "nextauth",
         "Nextjs",
-        "reduxjs"
+        "reduxjs",
+        "zustand"
     ],
     "editor.formatOnSave": true
 }
