@@ -1,4 +1,4 @@
-import { LoginForm } from "./form"
+import { LoginForm } from "./Form"
 
 export default function LoginPage() {
   return (
