@@ -29,7 +29,9 @@ export default async function Home() {
       <div className="text-center">
         <Suspense
           fallback={
-            <div className="text-2xl mb-4 my-4">Loading users from API...</div>
+            <div className="text-2xl mb-4 my-4">
+              Server side fetching from API...
+            </div>
           }
         >
           <Users />
