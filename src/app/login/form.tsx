@@ -24,12 +24,11 @@ export const LoginForm = () => {
         callbackUrl,
       })
 
-      setLoading(false)
-
       if (res?.error) {
         setError("invalid email or password")
       }
       router.push(callbackUrl)
+      setLoading(false)
     } catch (error: any) {
       setLoading(false)
       setError(error)
