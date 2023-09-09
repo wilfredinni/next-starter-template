@@ -4,6 +4,7 @@ import { Inter } from "next/font/google"
 
 import { Providers as ThemeProvider } from "@/providers/ThemeProvider"
 import { Providers as ReactQueryProvider } from "@/providers/ReactQueryProvider"
+import { Providers as SessionProvider } from "@/providers/AuthProvider"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -18,12 +19,14 @@ interface Props {
 
 export default function RootLayout({ children }: Props) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} bg-slate-50 dark:bg-gray-900`}>
-        <ThemeProvider>
-          <ReactQueryProvider>{children}</ReactQueryProvider>
-        </ThemeProvider>
-      </body>
-    </html>
+    <SessionProvider>
+      <html lang="en" suppressHydrationWarning>
+        <body className={`${inter.className} bg-slate-50 dark:bg-gray-900`}>
+          <ThemeProvider>
+            <ReactQueryProvider>{children}</ReactQueryProvider>
+          </ThemeProvider>
+        </body>
+      </html>
+    </SessionProvider>
   )
 }
