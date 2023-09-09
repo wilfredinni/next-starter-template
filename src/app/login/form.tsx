@@ -7,44 +7,33 @@ import { ChangeEvent, useState } from "react"
 export const LoginForm = () => {
   const router = useRouter()
   const [loading, setLoading] = useState(false)
-  const [formValues, setFormValues] = useState({
-    email: "",
-    password: "",
-  })
   const [error, setError] = useState("")
 
   const searchParams = useSearchParams()
   const callbackUrl = searchParams.get("callbackUrl") || "/"
 
-  const onSubmit = async (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     try {
       setLoading(true)
-
+      const formData = new FormData(e.currentTarget)
       const res = await signIn("credentials", {
         redirect: false,
-        email: formValues.email,
-        password: formValues.password,
+        email: formData.get("email"),
+        password: formData.get("password"),
         callbackUrl,
       })
 
       setLoading(false)
-      setFormValues({ email: "", password: "" })
 
-      if (!res?.error) {
-        router.push(callbackUrl)
-      } else {
+      if (res?.error) {
         setError("invalid email or password")
       }
+      router.push(callbackUrl)
     } catch (error: any) {
       setLoading(false)
       setError(error)
     }
-  }
-
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = event.target
-    setFormValues({ ...formValues, [name]: value })
   }
 
   return (
@@ -57,8 +46,6 @@ export const LoginForm = () => {
           required
           type="email"
           name="email"
-          value={formValues.email}
-          onChange={handleChange}
           placeholder="Email address"
           className="block w-full px-4 py-5 text-sm font-normal text-gray-700 bg-white dark:bg-slate-700 bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
         />
@@ -68,8 +55,6 @@ export const LoginForm = () => {
           required
           type="password"
           name="password"
-          value={formValues.password}
-          onChange={handleChange}
           placeholder="Password"
           className="block w-full px-4 py-5 text-sm font-normal text-gray-700 bg-white dark:bg-slate-700 bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
         />
