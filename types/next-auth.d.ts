@@ -7,6 +7,7 @@ declare module "next-auth" {
    */
   interface Session {
     user: User & DefaultSession["user"]
+    access: string | undefined
   }
 
   /**
@@ -20,5 +21,13 @@ declare module "next-auth" {
     last_name: string
     is_staff: boolean
     exp: number
+  }
+
+  interface JWT {
+    user: User
+    access_token: string
+    exp: number
+    ref: number
+    [key: string]: any
   }
 }

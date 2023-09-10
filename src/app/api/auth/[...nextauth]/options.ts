@@ -4,7 +4,13 @@ import CredentialsProvider from "next-auth/providers/credentials"
 
 import env from "@/lib/env"
 import refreshAccessToken from "./refresh"
-import { start } from "repl"
+
+const BACKEND_ACCESS_TOKEN_LIFETIME = 45 * 60 // 45 minutes
+const BACKEND_REFRESH_TOKEN_LIFETIME = 6 * 24 * 60 * 60 // 6 days
+
+const getCurrentEpochTime = () => {
+  return Math.floor(new Date().getTime() / 1000)
+}
 
 export const options: NextAuthOptions = {
   pages: {
@@ -12,6 +18,7 @@ export const options: NextAuthOptions = {
   },
   session: {
     strategy: "jwt",
+    maxAge: BACKEND_REFRESH_TOKEN_LIFETIME,
   },
   debug: process.env.NODE_ENV === "development",
   providers: [
@@ -47,12 +54,27 @@ export const options: NextAuthOptions = {
   ],
   callbacks: {
     async jwt({ token, user, account }) {
-      if (user && account) return { ...token, ...user }
-      if (Date.now() < (token.exp as number) * 1000) return token
-      return (await refreshAccessToken(token)) as JWT
+      if (user && account) {
+        return {
+          ...token,
+          ...user,
+          ref: getCurrentEpochTime() + BACKEND_ACCESS_TOKEN_LIFETIME,
+        }
+      }
+      if (getCurrentEpochTime() > Number(token.ref)) {
+        const response = (await refreshAccessToken(token)) as JWT
+        return {
+          ...response,
+          access_token: response.access,
+          refresh_token: response.refresh,
+          ref: getCurrentEpochTime() + BACKEND_ACCESS_TOKEN_LIFETIME,
+        }
+      }
+      return token
     },
     async session({ session, token }) {
       session.user = token.user as User
+      session.access = token?.access_token as string | undefined
       return session
     },
   },
