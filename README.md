@@ -1,4 +1,4 @@
-# Next 4 Starter Template
+# Next 14 Starter Template
 
 An opinionated starter template for Next 14 with authentication and more:
 
