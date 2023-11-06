@@ -1,8 +1,8 @@
-# Next 13 Starter Template
+# Next 4 Starter Template
 
-An opinionated starter template for Next 13 with authentication and more:
+An opinionated starter template for Next 14 with authentication and more:
 
-- Next 13
+- Next 14
 - App Router
 - Zustand
 - React Query
