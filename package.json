@@ -20,7 +20,7 @@
     "envalid": "^8.0.0",
     "eslint": "8.53.0",
     "eslint-config-next": "14.0.3",
-    "jwt-decode": "^3.1.2",
+    "jwt-decode": "^4.0.0",
     "next": "^14.0.1",
     "next-auth": "^4.24.4",
     "next-themes": "^0.2.1",
