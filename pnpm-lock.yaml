@@ -18,8 +18,8 @@ dependencies:
     specifier: 20.10.0
     version: 20.10.0
   '@types/react':
-    specifier: 18.2.38
-    version: 18.2.38
+    specifier: 18.2.39
+    version: 18.2.39
   '@types/react-dom':
     specifier: 18.2.17
     version: 18.2.17
@@ -67,7 +67,7 @@ dependencies:
     version: 5.3.2
   zustand:
     specifier: ^4.4.6
-    version: 4.4.6(@types/react@18.2.38)(react@18.2.0)
+    version: 4.4.6(@types/react@18.2.39)(react@18.2.0)
 
 devDependencies:
   '@tanstack/react-query-devtools':
@@ -385,11 +385,11 @@ packages:
   /@types/react-dom@18.2.17:
     resolution: {integrity: sha512-rvrT/M7Df5eykWFxn6MYt5Pem/Dbyc1N8Y0S9Mrkw2WFCRiqUgw9P7ul2NpwsXCSM1DVdENzdG9J5SreqfAIWg==}
     dependencies:
-      '@types/react': 18.2.38
+      '@types/react': 18.2.39
     dev: false
 
-  /@types/react@18.2.38:
-    resolution: {integrity: sha512-cBBXHzuPtQK6wNthuVMV6IjHAFkdl/FOPFIlkd81/Cd1+IqkHu/A+w4g43kaQQoYHik/ruaQBDL72HyCy1vuMw==}
+  /@types/react@18.2.39:
+    resolution: {integrity: sha512-Oiw+ppED6IremMInLV4HXGbfbG6GyziY3kqAwJYOR0PNbkYDmLWQA3a95EhdSmamsvbkJN96ZNN+YD+fGjzSBA==}
     dependencies:
       '@types/prop-types': 15.7.9
       '@types/scheduler': 0.16.5
@@ -2915,7 +2915,7 @@ packages:
     engines: {node: '>=10'}
     dev: false
 
-  /zustand@4.4.6(@types/react@18.2.38)(react@18.2.0):
+  /zustand@4.4.6(@types/react@18.2.39)(react@18.2.0):
     resolution: {integrity: sha512-Rb16eW55gqL4W2XZpJh0fnrATxYEG3Apl2gfHTyDSE965x/zxslTikpNch0JgNjJA9zK6gEFW8Fl6d1rTZaqgg==}
     engines: {node: '>=12.7.0'}
     peerDependencies:
@@ -2930,7 +2930,7 @@ packages:
       react:
         optional: true
     dependencies:
-      '@types/react': 18.2.38
+      '@types/react': 18.2.39
       react: 18.2.0
       use-sync-external-store: 1.2.0(react@18.2.0)
     dev: false
