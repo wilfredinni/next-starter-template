@@ -22,7 +22,7 @@ export function RadioGroup({ className, ...props }: HeadlessRadioGroupProps) {
         "space-y-3 [&_[data-slot=label]]:font-normal",
 
         // With descriptions
-        "has-[[data-slot=description]]:space-y-6 [&_[data-slot=label]]:has-[[data-slot=description]]:font-medium"
+        "has-[[data-slot=description]]:space-y-6 [&_[data-slot=label]]:has-[[data-slot=description]]:font-medium",
       )}
     />
   )
@@ -49,7 +49,7 @@ export function RadioField({ className, ...props }: HeadlessFieldProps) {
         "[&>[data-slot=description]]:col-start-2 [&>[data-slot=description]]:row-start-2",
 
         // With description
-        "[&_[data-slot=label]]:has-[[data-slot=description]]:font-medium"
+        "[&_[data-slot=label]]:has-[[data-slot=description]]:font-medium",
       )}
     />
   )
@@ -154,7 +154,7 @@ export function Radio({
             "size-full rounded-full border-[4.5px] border-transparent bg-[--radio-indicator] bg-clip-padding",
 
             // Forced colors mode
-            "forced-colors:border-[Canvas] forced-colors:group-data-[checked]:border-[Highlight]"
+            "forced-colors:border-[Canvas] forced-colors:group-data-[checked]:border-[Highlight]",
           )}
         />
       </span>

@@ -4,7 +4,7 @@ import React from "react"
 
 export const Link = React.forwardRef(function Link(
   props: LinkProps & React.ComponentPropsWithoutRef<"a">,
-  ref: React.ForwardedRef<HTMLAnchorElement>
+  ref: React.ForwardedRef<HTMLAnchorElement>,
 ) {
   return (
     <HeadlessDataInteractive>

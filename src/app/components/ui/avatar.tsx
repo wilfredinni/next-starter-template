@@ -35,7 +35,9 @@ export function Avatar({
         "inline-grid align-middle *:col-start-1 *:row-start-1",
 
         // Add the correct border radius
-        square ? "rounded-[20%] *:rounded-[20%]" : "rounded-full *:rounded-full"
+        square
+          ? "rounded-[20%] *:rounded-[20%]"
+          : "rounded-full *:rounded-full",
       )}
       {...props}
     >
@@ -78,12 +80,12 @@ export const AvatarButton = React.forwardRef(function AvatarButton(
     ...props
   }: AvatarProps &
     (HeadlessButtonProps | React.ComponentPropsWithoutRef<typeof Link>),
-  ref: React.ForwardedRef<HTMLElement>
+  ref: React.ForwardedRef<HTMLElement>,
 ) {
   let classes = clsx(
     className,
     square ? "rounded-lg" : "rounded-full",
-    "relative focus:outline-none data-[focus]:outline data-[focus]:outline-2 data-[focus]:outline-offset-2 data-[focus]:outline-blue-500"
+    "relative focus:outline-none data-[focus]:outline data-[focus]:outline-2 data-[focus]:outline-offset-2 data-[focus]:outline-blue-500",
   )
 
   return "href" in props ? (
