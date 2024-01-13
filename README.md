@@ -1,6 +1,6 @@
 # Next 14 Starter Template
 
-An opinionated starter template for Next 14 with authentication and more:
+An minimal starter template for Next 14:
 
 - Next 14
 - App Router
