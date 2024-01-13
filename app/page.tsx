@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { ModeToggle } from "@/components/theme-toggle"
+import { ThemeToggle } from "@/components/theme-toggle"
 import Counter from "@/components/counter"
 
 export default function Home() {
@@ -7,7 +7,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 flex w-full max-w-5xl items-center justify-between text-sm">
         <Button>Shadcn Button</Button>
-        <ModeToggle />
+        <ThemeToggle />
       </div>
       <Counter />
       <div></div>
