@@ -15,11 +15,11 @@ export const metadata: Metadata = {
   description: "Next Starter Template",
 }
 
-export default function RootLayout({
-  children,
-}: {
+interface Props {
   children: React.ReactNode
-}) {
+}
+
+export default function RootLayout({ children }: Props) {
   return (
     <html suppressHydrationWarning lang="en">
       <body
