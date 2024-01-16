@@ -1,15 +1,12 @@
 # Next 14 Starter Template
 
-An opinionated starter template for Next 14 with authentication and more:
+An minimal starter template for Next 14:
 
-- Next 14
-- App Router
-- Zustand
-- React Query
-- Next Auth (Auth of the box authentication with [django-starter-template](https://github.com/wilfredinni/django-starter-template))
-- Tailwind CSS
-- Heroicons
-- Headless UI
+- [Next 14 & App Router](https://nextjs.org/docs)
+- [Zustand](https://docs.pmnd.rs/zustand/getting-started/introduction)
+- [React Query](https://tanstack.com/query/latest/docs/react/overview)
+- [Tailwind CSS](https://tailwindcss.com/docs/installation)
+- [Shadcn/ui](https://ui.shadcn.com/docs)
 - Dark Mode
 
 ## Getting Started

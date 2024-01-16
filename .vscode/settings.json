@@ -1,14 +1,3 @@
 {
-    "peacock.remoteColor": "#1c2128",
-    "cSpell.words": [
-        "carlos",
-        "envalid",
-        "myverystrongpassword",
-        "nextauth",
-        "Nextjs",
-        "reduxjs",
-        "tanstack",
-        "zustand"
-    ],
     "editor.formatOnSave": true
 }
