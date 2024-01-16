@@ -2,7 +2,7 @@ import { cache } from "react"
 
 import { QueryClient } from "@tanstack/react-query"
 
-const STALE_TIME = 1000 * 60 * 5 // 5 minutes
+const STALE_TIME = 0 // 5 minutes
 
 export const queryClientConfig = {
   defaultOptions: {
