@@ -1,3 +1,4 @@
+import Image, { StaticImageData } from 'next/image';
 import { Badge } from "./ui/badge";
 import {
   Card,
@@ -13,7 +14,7 @@ import image4 from "./assets/looking-ahead.png";
 interface FeatureProps {
   title: string;
   description: string;
-  image: string;
+  image: StaticImageData;
 }
 
 const features: FeatureProps[] = [
@@ -85,10 +86,12 @@ export const Features = () => {
             <CardContent>{description}</CardContent>
 
             <CardFooter>
-              <img
+              <Image
                 src={image}
                 alt="About feature"
                 className="w-[200px] lg:w-[300px] mx-auto"
+                width={300}
+                height={300}
               />
             </CardFooter>
           </Card>
