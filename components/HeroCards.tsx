@@ -15,6 +15,7 @@ const imageUrls = [
   "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7",
   "https://images.unsplash.com/photo-1524253482453-3fed8d2fe12b",
 ];
+//
 
 export const HeroCards = () => {
   const plugin = React.useRef(
