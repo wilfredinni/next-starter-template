@@ -7,7 +7,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-
+import Autoplay from "embla-carousel-autoplay"
 const imageUrls = [
   "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d",
   "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
@@ -17,8 +17,16 @@ const imageUrls = [
 ];
 
 export const HeroCards = () => {
+  const plugin = React.useRef(
+    Autoplay({ delay: 2000, stopOnInteraction: true })
+  )
   return (
-    <Carousel className="w-full">
+    <Carousel
+      plugins={[plugin.current]}
+      className="w-full "
+      onMouseEnter={plugin.current.stop}
+      onMouseLeave={plugin.current.reset}
+    >
       <CarouselContent>
         {imageUrls.map((url, index) => (
           <CarouselItem key={index}>
@@ -35,3 +43,5 @@ export const HeroCards = () => {
     </Carousel>
   );
 };
+
+
