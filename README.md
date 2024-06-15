@@ -21,6 +21,14 @@ pnpm run dev
 
 ### Building
 
+Link to your Vercel account:
+
+```bash
+turbo login
+```
+
+Build the project:
+
 ```bash
 turbo build
 ```
