@@ -2,6 +2,7 @@
 
 An minimal starter template for Next 14:
 
+- [Turbo](https://vercel.com/solutions/turborepo) Ford developing and building.
 - [Next 14 & App Router](https://nextjs.org/docs)
 - [Zustand](https://docs.pmnd.rs/zustand/getting-started/introduction)
 - [React Query](https://tanstack.com/query/latest/docs/react/overview)
@@ -11,7 +12,15 @@ An minimal starter template for Next 14:
 
 ## Getting Started
 
+### Developing
+
 ```bash
 pnpm install
 pnpm run dev
+```
+
+### Building
+
+```bash
+turbo build
 ```
