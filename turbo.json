@@ -10,29 +10,14 @@
         "!.next/cache/**"
       ]
     },
-    "deploy": {
+    "check-types": {
       "dependsOn": [
-        "build",
-        "test",
-        "lint"
+        "^check-types"
       ]
     },
-    "test": {
-      "dependsOn": [
-        "build"
-      ],
-      "inputs": [
-        "src/**/*.tsx",
-        "src/**/*.ts",
-        "test/**/*.ts",
-        "test/**/*.tsx"
-      ]
-    },
-    "lint": {},
     "dev": {
-      "cache": false,
-      "persistent": true
-    },
-    "type-check": {}
+      "persistent": true,
+      "cache": false
+    }
   }
 }
